@@ -4,7 +4,5 @@ author: 'Douglas Silva'
 runs:
   using: "composite"
   steps:
-    - run: |
-        chmod +x ./register-deploy.sh
-        sh ./register-deploy.sh
+    - run: provicapital/deploy-onep/src/register-deploy.sh
       shell: bash
