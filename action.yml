@@ -2,38 +2,27 @@ name: 'deploy-onep'
 description: 'Register deploy with One Platform!'
 author: 'Douglas Silva'
 
-inputs:
-  url:
-    description: "URL Deploy for One Platform"
-    default: $ONEP_DEPLOY_URL
-    required: true
-  id:
-    description: "ID for One Platform"
-    default: $ONEP_APP_ID
-    required: true
-  uid:
-    description: "User ID for One Platform"
-    default: $ONEP_APP_UID
-    required: true
-  org:
-    description: "Organization ID for One Platform"
-    default: $ONEP_ORG
-    required: true
 runs:
   using: "composite"
   steps:
-    - run: |
+    - uses: provicapital/deploy-onep@master
+      env:
+          url: ${{ secrets.ONEP_DEPLOY_URL }}
+          id: ${{ secrets.ONEP_APP_ID }}
+          uid: ${{ secrets.ONEP_APP_UID }}
+          org: ${{ secrets.ONEP_ORG }} 
+      run: |
         curl --request POST \
             --url $url \
             --header 'Content-Type: application/json' \
             --data-binary @- <<EOF
             {
-                "application_id": $id,
-                "application_uid": "$uid",
-                "organization": "$org",
-                "description": "${{ github.event.head_commit.message }}",
-                "version": "${{ github.sha }}",
-                "type": "deploy"
+              "application_id": $id,
+              "application_uid": "$uid",
+              "organization": "$org",
+              "description": "${{ github.event.head_commit.message }}",
+              "version": "${{ github.sha }}",
+              "type": "deploy"
             }
             EOF
       shell: bash
