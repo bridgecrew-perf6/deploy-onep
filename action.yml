@@ -5,5 +5,24 @@ author: 'Douglas Silva'
 runs:
   using: "composite"
   steps:
-    - run: sh register-deploy.sh
+    - run: |
+        curl --request POST \
+            --url $url \
+            --header 'Content-Type: application/json' \
+            --data-binary @- <<EOF
+            {
+                "application_id": $id,
+                "application_uid": "$uid",
+                "organization": "$org",
+                "description": "${{ github.event.head_commit.message }}",
+                "version": "${{ github.sha }}",
+                "type": "deploy"
+            }
+            EOF
       shell: bash
+
+      env:
+          url: ${{ secrets.ONEP_DEPLOY_URL }}
+          id: ${{ secrets.ONEP_APP_ID }}
+          uid: ${{ secrets.ONEP_APP_UID }}
+          org: ${{ secrets.ONEP_ORG }} 
