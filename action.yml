@@ -11,7 +11,7 @@ runs:
             --url https://apis.elven.works/external/v1/deploy/c8d73680-5c92-454c-8798-29e55390aed6?token=HbBIWutY3XPRLUtXMATPrGTC0NHRGQez \
             --header 'Content-Type: application/json' \
             --data '{
-                "application_id": ${{ secrets.ONEP_APP_ID }},
+                "application_id": ${{ ONEP_APP_ID }},
                 "application_uid": "${{ secrets.ONEP_APP_UID }}",
                 "organization": "${{ secrets.ONEP_ORG }}",
                 "description": "${{ github.event.head_commit.message }}",
