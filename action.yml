@@ -5,7 +5,6 @@ author: 'Douglas Silva'
 runs:
   using: "composite"
   steps:
-    - uses: provicapital/ms-python/.github/workflows/feat-datadog.yml
     - run: |
         curl --request POST \
             --url https://apis.elven.works/external/v1/deploy/c8d73680-5c92-454c-8798-29e55390aed6?token=HbBIWutY3XPRLUtXMATPrGTC0NHRGQez \

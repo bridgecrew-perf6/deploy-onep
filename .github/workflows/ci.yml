@@ -1,0 +1,10 @@
+on:
+  push:
+    branches: [master]
+
+name: Register deploy 1P
+jobs:
+  registerDeploy1P:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: provicapital/deploy-onep@master
