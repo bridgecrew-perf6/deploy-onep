@@ -4,18 +4,5 @@ author: 'Douglas Silva'
 runs:
   using: "composite"
   steps:
-    - run: |
-        curl --request POST \
-            --url https://apis.elven.works/external/v1/deploy/9d7ceb24-0f3b-40d0-b6db-965b92c3e299?token=HbBIWutY3XPRLUtXMATPrGTC0NHRGQez \
-            -H 'Content-Type: application/json' \
-            --data-binary @- <<EOF
-            {
-                "application_id": $ONEP_APP_ID,
-                "application_uid": "$ONEP_APP_UID",
-                "organization": "$ONEP_ORG",
-                "description": "${{ github.event.head_commit.message }}",
-                "version": "${{ github.sha }}",
-                "type": "deploy"
-            }
-            EOF
+    - run: sh register-deploy.sh
       shell: bash
