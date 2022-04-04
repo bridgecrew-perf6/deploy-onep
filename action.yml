@@ -7,7 +7,7 @@ runs:
   steps:
     - run: |
         curl --request POST \
-            --url $onep-url \
+            --url "$onep-url" \
             --header 'Content-Type: application/json' \
             --data '{
                 "application_id": $onep-app-id,
