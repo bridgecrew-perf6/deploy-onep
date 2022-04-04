@@ -1,4 +1,4 @@
-name: register deploy
+name: 'deploy-onep'
 jobs:
     run: |
       curl --request POST \
