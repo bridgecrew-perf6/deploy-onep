@@ -7,12 +7,12 @@ runs:
   steps:
     - run: |
         curl --request POST \
-            --url https://apis.elven.works/external/v1/deploy/c8d73680-5c92-454c-8798-29e55390aed6?token=HbBIWutY3XPRLUtXMATPrGTC0NHRGQez \
+            --url $onep-url \
             --header 'Content-Type: application/json' \
             --data '{
-                "application_id": $ONEP_APP_ID,
-                "application_uid": "$ONEP_APP_UID",
-                "organization": "$ONEP_ORG",
+                "application_id": $onep-app-id,
+                "application_uid": "$onep-app-uid",
+                "organization": "$onep-org",
                 "description": "${{ github.event.head_commit.message }}",
                 "version": "${{ github.sha }}",
                 "type": "deploy"
