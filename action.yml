@@ -11,7 +11,7 @@ runs:
           id: ${{ secrets.ONEP_APP_ID }}
           uid: ${{ secrets.ONEP_APP_UID }}
           org: ${{ secrets.ONEP_ORG }} 
-      run: |
+    - run: |
         curl --request POST \
             --url $url \
             --header 'Content-Type: application/json' \
