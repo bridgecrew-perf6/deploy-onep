@@ -11,9 +11,9 @@ runs:
             --header 'Content-Type: application/json' \
             --data-binary @- <<EOF
             {
-                "application_id": $onep.app.id,
-                "application_uid": "$onep.app.uid",
-                "organization": "$ONEP_ORG",
+                "application_id": $id,
+                "application_uid": "$uid",
+                "organization": "$org",
                 "description": "${{ github.event.head_commit.message }}",
                 "version": "${{ github.sha }}",
                 "type": "deploy"
