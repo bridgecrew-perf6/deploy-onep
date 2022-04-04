@@ -3,5 +3,5 @@ description: 'Register deploy with One Platform!'
 runs:
   using: "composite"
   steps:
-    - run: ./register-deploy.sh       
+    - run: sh ./register-deploy.sh       
       shell: bash
