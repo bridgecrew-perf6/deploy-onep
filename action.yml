@@ -2,6 +2,23 @@ name: 'deploy-onep'
 description: 'Register deploy with One Platform!'
 author: 'Douglas Silva'
 
+inputs:
+  url:
+    description: "URL Deploy for One Platform"
+    default: ${{ secrets.ONEP_DEPLOY_URL }}
+    required: true
+  id:
+    description: "ID for One Platform"
+    default: ${{ secrets.ONEP_APP_ID }}
+    required: true
+  uid:
+    description: "User ID for One Platform"
+    default: ${{ secrets.ONEP_APP_UID }}
+    required: true
+  org:
+    description: "Organization ID for One Platform"
+    default: ${{ secrets.ONEP_ORG }}
+    required: true
 runs:
   using: "composite"
   steps:
@@ -20,9 +37,3 @@ runs:
             }
             EOF
       shell: bash
-
-      env:
-          url: ${{ secrets.ONEP_DEPLOY_URL }}
-          id: ${{ secrets.ONEP_APP_ID }}
-          uid: ${{ secrets.ONEP_APP_UID }}
-          org: ${{ secrets.ONEP_ORG }} 
