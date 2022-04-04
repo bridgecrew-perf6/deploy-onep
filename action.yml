@@ -4,5 +4,5 @@ author: 'Douglas Silva'
 runs:
   using: "composite"
   steps:
-    - run: provicapital/deploy-onep/src/register-deploy.sh
+    - run: sh ./register-deploy.sh
       shell: bash
