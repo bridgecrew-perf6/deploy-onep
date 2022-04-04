@@ -7,7 +7,7 @@ runs:
   steps:
     - run: |
         curl --request POST \
-        --url ${{ secrets.ONEP_DEPLOY_URL }} \
+        --url $ONEP_DEPLOY_URL \
         -H 'Content-Type: application/json' \
         --data-binary @- <<EOF
         {
