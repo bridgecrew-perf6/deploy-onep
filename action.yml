@@ -5,5 +5,5 @@ author: 'Douglas Silva'
 runs:
   using: "composite"
   steps:
-    - run: register-deploy.sh
+    - run: sh register-deploy.sh
       shell: bash
