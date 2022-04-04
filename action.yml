@@ -7,16 +7,16 @@ runs:
   steps:
     - run: |
         curl --request POST \
-        --url $ONEP_DEPLOY_URL \
-        -H 'Content-Type: application/json' \
-        --data-binary @- <<EOF
-        {
-        "application_id": $onep.app.id,
-        "application_uid": "$onep.app.uid",
-        "organization": "$ONEP_ORG",
-        "description": "${{ github.event.head_commit.message }}",
-        "version": "${{ github.sha }}",
-        "type": "deploy"
-        }
-        EOF
+            --url $ONEP_DEPLOY_URL \
+            --header 'Content-Type: application/json' \
+            --data-binary @- <<EOF
+            {
+                "application_id": $onep.app.id,
+                "application_uid": "$onep.app.uid",
+                "organization": "$ONEP_ORG",
+                "description": "${{ github.event.head_commit.message }}",
+                "version": "${{ github.sha }}",
+                "type": "deploy"
+            }
+            EOF
       shell: bash
