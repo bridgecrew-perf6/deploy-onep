@@ -1,11 +1,12 @@
 name: 'deploy-onep'
 description: 'Register deploy with One Platform!'
+author: 'Douglas Silva'
 runs:
   using: "composite"
   steps:
     - run: |
         curl --request POST \
-            --url ${{ secrets.ONEP_DEPLOY_URL }}${{ secrets.ONEP_APP_ID }}${{ secrets.ONEP_DEPLOY_TOKEN }} \
+            --url $ONEP_DEPLOY_URL$ONEP_APP_ID$ONEP_DEPLOY_TOKEN\
             -H 'Content-Type: application/json' \
             --data-binary @- <<EOF
             {
