@@ -7,7 +7,7 @@ runs:
   steps:
     - run: |
         curl --request POST \
-            --url $ONEP_DEPLOY_URL \
+            --url $onep.url \
             --header 'Content-Type: application/json' \
             --data-binary @- <<EOF
             {
