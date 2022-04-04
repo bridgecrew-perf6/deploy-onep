@@ -5,7 +5,7 @@ author: 'Douglas Silva'
 runs:
   using: "composite"
   steps:
-    - uses: provicapital/deploy-onep@master
+    - uses: actions/checkout@v1
       env:
           url: $ONEP_DEPLOY_URL
           id: $ONEP_APP_ID
