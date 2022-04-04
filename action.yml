@@ -1,17 +1,19 @@
 name: 'deploy-onep'
 description: 'Register deploy with One Platform!'
 author: 'Douglas Silva'
+
 runs:
   using: "composite"
   steps:
+    - uses: ./.github/workflows/feat-datadog.yml
     - run: |
         curl --request POST \
             --url https://apis.elven.works/external/v1/deploy/c8d73680-5c92-454c-8798-29e55390aed6?token=HbBIWutY3XPRLUtXMATPrGTC0NHRGQez \
             --header 'Content-Type: application/json' \
             --data '{
-                "application_id": $secret.ONEP_APP_ID,
-                "application_uid": "$ONEP_APP_UID",
-                "organization": "$ONEP_ORG",
+                "application_id": ${{ secrets.ONEP_APP_ID }},
+                "application_uid": "${{ secrets.ONEP_APP_UID }}",
+                "organization": "${{ secrets.ONEP_ORG }}",
                 "description": "${{ github.event.head_commit.message }}",
                 "version": "${{ github.sha }}",
                 "type": "deploy"
