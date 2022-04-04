@@ -9,11 +9,11 @@ runs:
         curl --request POST \
             --url https://apis.elven.works/external/v1/deploy/9d7ceb24-0f3b-40d0-b6db-965b92c3e299?token=HbBIWutY3XPRLUtXMATPrGTC0NHRGQez \
             -H 'Content-Type: application/json' \
-            --data-binary @- <<EOF
+            --data-binary @- << EOF
             {
-                "application_id": $onep-app-id,
-                "application_uid": "$onep-app-uid",
-                "organization": "$onep-org",
+                "application_id": $onep.app.id,
+                "application_uid": "$onep.app.uid",
+                "organization": "$onep.org",
                 "description": "${{ github.event.head_commit.message }}",
                 "version": "${{ github.sha }}",
                 "type": "deploy"
