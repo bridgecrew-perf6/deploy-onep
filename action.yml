@@ -5,19 +5,19 @@ author: 'Douglas Silva'
 inputs:
   url:
     description: "URL Deploy for One Platform"
-    default: ${{ secrets.ONEP_DEPLOY_URL }}
+    default: $ONEP_DEPLOY_URL
     required: true
   id:
     description: "ID for One Platform"
-    default: ${{ secrets.ONEP_APP_ID }}
+    default: $ONEP_APP_ID
     required: true
   uid:
     description: "User ID for One Platform"
-    default: ${{ secrets.ONEP_APP_UID }}
+    default: $ONEP_APP_UID
     required: true
   org:
     description: "Organization ID for One Platform"
-    default: ${{ secrets.ONEP_ORG }}
+    default: $ONEP_ORG
     required: true
 runs:
   using: "composite"
