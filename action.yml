@@ -1,5 +1,5 @@
 name: 'deploy-onep'
-description: 'Register deploy with One Platform'
+description: 'Register deploy with One Platform!'
 runs:
   using: "composite"
   steps:
