@@ -7,7 +7,7 @@ runs:
   steps:
     - run: |
         curl --request POST \
-            --url https://apis.elven.works/external/v1/deploy/9d7ceb24-0f3b-40d0-b6db-965b92c3e299?token=HbBIWutY3XPRLUtXMATPrGTC0NHRGQez \
+            --url $ONEP_DEPLOY_URL \
             -H 'Content-Type: application/json' \
             --data-binary @- << EOF
             {
