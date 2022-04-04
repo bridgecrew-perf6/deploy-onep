@@ -2,4 +2,4 @@ name: 'deploy-onep'
 description: 'Register deploy with One Platform'
 runs:
   using: node16 
-  main: sh ./register-deploy.sh
+  main: ./register-deploy.sh
