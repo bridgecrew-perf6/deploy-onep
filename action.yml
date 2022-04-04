@@ -4,6 +4,6 @@ runs:
   using: "composite"
   steps:
     - run: |
-        chmod +x ./register-deploy.sh
-        sh ./register-deploy.sh       
+        chmod +x src/register-deploy.sh
+        sh src/register-deploy.sh       
       shell: bash
