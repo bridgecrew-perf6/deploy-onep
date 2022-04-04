@@ -3,7 +3,5 @@ description: 'Register deploy with One Platform!'
 runs:
   using: "composite"
   steps:
-    - run: |
-        chmod +x src/register-deploy.sh
-        sh src/register-deploy.sh       
+    - run: sh src/register-deploy.sh       
       shell: bash
