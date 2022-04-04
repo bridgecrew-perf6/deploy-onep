@@ -8,7 +8,7 @@ runs:
         curl --request POST \
             --url $ONEP_DEPLOY_URL,$ONEP_APP_ID,$ONEP_DEPLOY_TOKEN \
             -H 'Content-Type: application/json' \
-            --data-binary @- <<EOF
+            --data-binary @- '<<EOF
             {
                 "application_id": $ONEP_APP_ID,
                 "application_uid": "$ONEP_APP_UID",
@@ -17,5 +17,5 @@ runs:
                 "version": "${{ github.sha }}",
                 "type": "deploy"
             }
-            EOF
+            EOF'
       shell: bash
