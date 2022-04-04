@@ -4,5 +4,7 @@ author: 'Douglas Silva'
 runs:
   using: "composite"
   steps:
-    - run: sh register-deploy.sh
+    - run: |
+        chmod +x register-deploy.sh
+        sh register-deploy.sh
       shell: bash
