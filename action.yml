@@ -1,8 +1,25 @@
 name: 'deploy-onep'
 description: 'Register deploy with One Platform!'
 author: 'provicapital'
+inputs:
+  onep-deploy-url:
+    description: >-
+      URL used for webhook with One Platform
+    required: false
+  onep-app-id:
+    description: >-
+      URL used for webhook with One Platform
+    required: false
+  onep-app-uid:
+    description: >-
+      URL used for webhook with One Platform
+    required: false
+  onep-org:
+    description: >-
+      URL used for webhook with One Platform
+    required: false
 runs:
-  using: "composite"
+  using: 'composite'
   steps:
     - run: |
         curl --request POST \
