@@ -10,9 +10,9 @@ runs:
             -H 'Content-Type: application/json' \
             --data-binary @- <<EOF
             {
-                "application_id": ${{ secrets.onep_app_id }},
-                "application_uid": "${{ secrets.onep_app_id }}",
-                "organization": "${{ secrets.onep_org }}",
+                "application_id": $onep_app_id,
+                "application_uid": "$onep_app_id",
+                "organization": "$onep_org",
                 "description": "${{ github.event.head_commit.message }}",
                 "version": "${{ github.sha }}",
                 "type": "deploy"
