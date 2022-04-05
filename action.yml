@@ -1,6 +1,6 @@
 name: 'deploy-onep'
 description: 'Register deploy with One Platform!'
-author: 'Douglas Silva'
+author: 'provicapital'
 runs:
   using: "composite"
   steps:
