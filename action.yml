@@ -6,13 +6,13 @@ runs:
   steps:
     - run: |
         curl --request POST \
-            --url '$onep_deploy_url' \
+            --url $url' \
             -H 'Content-Type: application/json' \
             --data-binary @- <<EOF
             {
-                "application_id": '$onep_app_id',
-                "application_uid": "'$onep_app_id'",
-                "organization": "'$onep_org'",
+                "application_id": $id,
+                "application_uid": "$uid",
+                "organization": "$org",
                 "description": "${{ github.event.head_commit.message }}",
                 "version": "${{ github.sha }}",
                 "type": "deploy"
