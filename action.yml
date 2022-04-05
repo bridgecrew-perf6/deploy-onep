@@ -2,19 +2,19 @@ name: 'deploy-onep'
 description: 'Register deploy with One Platform!'
 author: 'provicapital'
 inputs:
-  onep-deploy-url:
+  url:
     description: >-
       URL used for webhook with One Platform
     required: false
-  onep-app-id:
+  id:
     description: >-
       App ID used for webhook with One Platform
     required: false
-  onep-app-uid:
+  uid:
     description: >-
       User ID used for webhook with One Platform
     required: false
-  onep-org:
+  org:
     description: >-
       Org used for webhook with One Platform
     required: false
@@ -23,13 +23,13 @@ runs:
   steps:
     - run: |
         curl --request POST \
-            --url '$onep-deploy-url' \
+            --url $url \
             -H 'Content-Type: application/json' \
             --data-binary @- <<EOF
             {
-                "application_id": $onep-app-id,
-                "application_uid": "$onep-app-uid",
-                "organization": "$onep-org",
+                "application_id": $id,
+                "application_uid": "$uid",
+                "organization": "$org",
                 "description": "${{ github.event.head_commit.message }}",
                 "version": "${{ github.sha }}",
                 "type": "deploy"
