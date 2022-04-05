@@ -8,28 +8,28 @@ inputs:
     required: false
   onep-app-id:
     description: >-
-      URL used for webhook with One Platform
+      App ID used for webhook with One Platform
     required: false
   onep-app-uid:
     description: >-
-      URL used for webhook with One Platform
+      User ID used for webhook with One Platform
     required: false
   onep-org:
     description: >-
-      URL used for webhook with One Platform
+      Org used for webhook with One Platform
     required: false
 runs:
   using: 'composite'
   steps:
     - run: |
         curl --request POST \
-            --url $url \
+            --url $onep-deploy-url \
             -H 'Content-Type: application/json' \
             --data-binary @- <<EOF
             {
-                "application_id": $id,
-                "application_uid": "$uid",
-                "organization": "$org",
+                "application_id": $onep-app-id,
+                "application_uid": "$onep-app-uid",
+                "organization": "$onep-org",
                 "description": "${{ github.event.head_commit.message }}",
                 "version": "${{ github.sha }}",
                 "type": "deploy"
