@@ -17,5 +17,5 @@ runs:
                 "version": "${{ github.sha }}",
                 "type": "deploy"
             }
-            EOF
+            EOF'
       shell: bash
