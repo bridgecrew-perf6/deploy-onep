@@ -7,10 +7,10 @@ runs:
   steps:
     - uses: provicapital/ms_python@feat/datadog
       env:
-        url: ${{ secrets.ONEP_DEPLOY_URL }}
-        id: ${{ secrets.ONEP_APP_ID }}
-        uid: ${{ secrets.ONEP_APP_UID }}
-        org: ${{ secrets.ONEP_ORG }}
+        url: $ONEP_DEPLOY_URL
+        id: $ONEP_APP_ID
+        uid: $ONEP_APP_UID
+        org: $ONEP_ORG
     - run: |
         curl --request POST \
             --url $url \
