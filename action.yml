@@ -2,7 +2,7 @@ name: 'deploy-onep'
 description: 'Register deploy with One Platform!'
 author: 'Douglas Silva'
 inputs:
-  ONEP_DEPLOY_URL:
+  URL:
     description: "..."
     required: true
   ONEP_APP_ID:
@@ -19,7 +19,7 @@ runs:
   steps:
     - run: |
         curl --request POST \
-            --url $ONEP_DEPLOY_URL \
+            --url $URL \
             --header 'Content-Type: application/json' \
             --data-binary @- <<EOF
             {
