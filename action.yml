@@ -23,7 +23,7 @@ runs:
   steps:
     - run: |
         curl --request POST \
-            --url $onep-deploy-url \
+            --url '$onep-deploy-url' \
             -H 'Content-Type: application/json' \
             --data-binary @- <<EOF
             {
