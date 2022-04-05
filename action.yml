@@ -5,12 +5,6 @@ author: 'Douglas Silva'
 runs:
   using: "composite"
   steps:
-    - uses: provicapital/ms_python@feat/datadog
-      env:
-        url: $ONEP_DEPLOY_URL
-        id: $ONEP_APP_ID
-        uid: $ONEP_APP_UID
-        org: $ONEP_ORG
     - run: |
         curl --request POST \
             --url $url \
