@@ -6,7 +6,7 @@ runs:
   steps:
     - run: |
         curl --request POST \
-            --url ${{url}}${{id}}${{token}} \
+            --url [$url,$id,$token] \
             --header 'Content-Type: application/json' \
             --data-binary @- <<EOF
             {
