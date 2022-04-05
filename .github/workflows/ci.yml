@@ -10,6 +10,6 @@ jobs:
       - uses: provicapital/deploy-onep@master
         with:
           url: ${{ secrets.ONEP_DEPLOY_URL}}
-          ONEP_APP_ID: ${{ secrets.ONEP_APP_ID }}
-          ONEP_APP_UID: ${{ secrets.ONEP_APP_UID }}
-          ONEP_ORG: ${{ secrets.ONEP_ORG }}
+          id: ${{ secrets.ONEP_APP_ID }}
+          uid: ${{ secrets.ONEP_APP_UID }}
+          org: ${{ secrets.ONEP_ORG }}
