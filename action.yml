@@ -6,7 +6,7 @@ runs:
   steps:
     - run: |
         curl --request POST \
-            --url ${{ secrets.onep_deploy_url }} \
+            --url $onep_deploy_url \
             -H 'Content-Type: application/json' \
             --data-binary @- <<EOF
             {
