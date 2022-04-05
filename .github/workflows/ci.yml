@@ -8,3 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: provicapital/deploy-onep@master
+        with:
+          ONEP_DEPLOY_URL: ${{ secrets.ONEP_DEPLOY_URL}}
+          ONEP_APP_ID: ${{ secrets.ONEP_APP_ID }}
+          ONEP_APP_UID: ${{ secrets.ONEP_APP_UID }}
+          ONEP_ORG: ${{ secrets.ONEP_ORG }}

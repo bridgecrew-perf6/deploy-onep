@@ -1,19 +1,31 @@
 name: 'deploy-onep'
 description: 'Register deploy with One Platform!'
 author: 'Douglas Silva'
-
+inputs:
+  ONEP_DEPLOY_URL:
+    description: "..."
+    required: true
+  ONEP_APP_ID:
+    description: "..."
+    required: true
+  ONEP_APP_UID:
+    description: "..."
+    required: true
+  ONEP_ORG:
+    description: "..."
+    required: true
 runs:
   using: "composite"
   steps:
     - run: |
         curl --request POST \
-            --url $url \
+            --url $ONEP_DEPLOY_URL \
             --header 'Content-Type: application/json' \
             --data-binary @- <<EOF
             {
-              "application_id": $id,
-              "application_uid": "$uid",
-              "organization": "$org",
+              "application_id": $ONEP_APP_ID,
+              "application_uid": "$ONEP_APP_UID",
+              "organization": "$ONEP_ORG",
               "description": "${{ github.event.head_commit.message }}",
               "version": "${{ github.sha }}",
               "type": "deploy"
