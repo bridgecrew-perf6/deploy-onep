@@ -9,6 +9,7 @@ on:
     - completed
 jobs:
   register_deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     name: Checkout & Register Deploy
     runs-on: ubuntu-latest
 
