@@ -14,12 +14,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
         with:
           fetch-depth: 0
 
-        if: ${{ github.event.workflow_run.conclusion == 'success' }}
-
       - uses: provicapital/deploy-onep@master
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
         env:
           url: ${{ secrets.ONEP_DEPLOY_URL }}
           id: ${{ secrets.ONEP_APP_ID }}
