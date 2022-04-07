@@ -1,0 +1,26 @@
+---
+name: 1P Register Deploy Production
+
+on:
+  workflow_run:
+    workflows: 
+    - Ci Workflow Production
+    types:
+      - completed
+
+jobs:
+  register_deploy:
+    name: Checkout && Register Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: provicapital/deploy-onep@master
+        env:
+          url: ${{ secrets.ONEP_DEPLOY_URL }}
+          id: ${{ secrets.ONEP_APP_ID }}
+          uid: ${{ secrets.ONEP_APP_UID }}
+          org: ${{ secrets.ONEP_ORG }}
