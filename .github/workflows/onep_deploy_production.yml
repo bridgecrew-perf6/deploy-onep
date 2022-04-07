@@ -4,9 +4,10 @@ name: 1P Register Deploy Production
 on:
   workflow_run:
     workflows: 
-    - Name workflow
+    - Run tests
     types:
     - completed
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 jobs:
   register_deploy:
     name: Checkout & Register Deploy
