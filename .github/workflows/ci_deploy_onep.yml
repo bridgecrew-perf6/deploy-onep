@@ -17,10 +17,3 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-
-      - uses: provicapital/deploy-onep@master
-        env:
-          url: ${{ secrets.ONEP_DEPLOY_URL }}
-          id: ${{ secrets.ONEP_APP_ID }}
-          uid: ${{ secrets.ONEP_APP_UID }}
-          org: ${{ secrets.ONEP_ORG }}
