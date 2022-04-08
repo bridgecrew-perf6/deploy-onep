@@ -4,7 +4,7 @@ author: 'provicapital'
 inputs:
   url:
     description: 'URL do register deploy'
-    default: ${{ ONEP_DEPLOY_URL }}
+    default: ${{secrets.ONEP_DEPLOY_URL}}
     required: false
   id:
     description: 'App ID for register deploy'
