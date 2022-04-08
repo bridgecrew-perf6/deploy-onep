@@ -4,19 +4,19 @@ author: 'provicapital'
 inputs:
   url:
     description: 'URL do register deploy'
-    default: '${ONEP_DEPLOY_URL}'
+    default: ${{ ONEP_DEPLOY_URL }}
     required: false
   id:
     description: 'App ID for register deploy'
-    default: '${ONEP_APP_ID}'
+    default: ${{ ONEP_APP_ID }}
     required: false
   uid:
     description: 'App UID for register deploy'
-    default: '${ONEP_APP_UID}'
+    default: ${{ ONEP_APP_UID }}
     required: false
   org:
     description: 'Organization name for register deploy'
-    default: '${ONEP_ORG}'
+    default: ${{ ONEP_ORG }}
     required: false
 
 runs:
