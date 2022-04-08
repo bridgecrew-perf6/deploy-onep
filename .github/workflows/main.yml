@@ -4,8 +4,8 @@ on:
 
 name: Run tests
 jobs:
-  aws_copilot_ci:
-    name: AWS Copilot CI Production
+  actions_checkout:
+    name: Checkout test
     runs-on: ubuntu-latest
 
     steps:
