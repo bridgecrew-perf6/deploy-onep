@@ -24,3 +24,4 @@ jobs:
           id: ${{ secrets.ONEP_APP_ID }}
           uid: ${{ secrets.ONEP_APP_UID }}
           org: ${{ secrets.ONEP_ORG }}
+          desc: ${{ secrets.ONEP_DEPLOY_MESSAGE}}
