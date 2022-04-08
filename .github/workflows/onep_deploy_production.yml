@@ -19,6 +19,8 @@ jobs:
           fetch-depth: 0
 
       - uses: provicapital/deploy-onep@master
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
         env:
           url: ${{ secrets.ONEP_DEPLOY_URL }}
           id: ${{ secrets.ONEP_APP_ID }}
