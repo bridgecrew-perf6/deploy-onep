@@ -5,6 +5,8 @@ on:
   workflow_run:
     workflows: 
     - Run tests
+    get: 
+    - ${{ github.event.head_commit.message }}
     types:
     - completed
 jobs:
@@ -24,5 +26,3 @@ jobs:
           id: ${{ secrets.ONEP_APP_ID }}
           uid: ${{ secrets.ONEP_APP_UID }}
           org: ${{ secrets.ONEP_ORG }}
-          desc: ${{ secrets.ONEP_DEPLOY_MESSAGE }}
-          ver: ${{ secrets.ONEP_DEPLOY_VERSION }}
