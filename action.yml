@@ -1,6 +1,23 @@
 name: 'deploy-onep'
 description: 'Register deploy with One Platform!'
 author: 'provicapital'
+inputs:
+  url:
+    description: 'URL do register deploy'
+    default: ${ONEP_DEPLOY_URL}
+    required: false
+  id:
+    description: 'App ID for register deploy'
+    default: ${{ secrets.ONEP_APP_ID }}
+    required: false
+  uid:
+    description: 'App UID for register deploy'
+    default: ${{ secrets.ONEP_APP_UID }}
+    required: false
+  org:
+    description: 'Organization name for register deploy'
+    default: ${{ secrets.ONEP_ORG }}
+    required: false
 
 runs:
   using: 'composite'
