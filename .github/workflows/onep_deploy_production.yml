@@ -3,6 +3,7 @@ name: 1P Register Deploy Production
 
 on:
   workflow_run:
+    description: ${{ github.event.head_commit.message }}
     workflows: 
     - Run tests
     types:
@@ -24,4 +25,3 @@ jobs:
           id: ${{ secrets.ONEP_APP_ID }}
           uid: ${{ secrets.ONEP_APP_UID }}
           org: ${{ secrets.ONEP_ORG }}
-          desc: ${{ github.event.head_commit.message }}
