@@ -14,7 +14,7 @@ runs:
                 "application_id": $id,
                 "application_uid": "$uid",
                 "organization": "$org",
-                "description": "Deploy Sucessfully,
+                "description": "Deploy Sucessfull",
                 "version": "${{ github.sha }}",
                 "type": "deploy"
             }
