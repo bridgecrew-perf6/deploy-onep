@@ -3,7 +3,6 @@ name: 1P Register Deploy Production
 
 on:
   workflow_run:
-    description: ${{ github.event.head_commit.message }}
     workflows: 
     - Run tests
     types:
