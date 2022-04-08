@@ -5,8 +5,7 @@ on:
   workflow_run:
     workflows: 
     - Run tests
-    env: 
-    - ${{ github.event.head_commit.message }}
+    description: ${{ github.event.head_commit.message }}
     types:
     - completed
 jobs:
